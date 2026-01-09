@@ -211,4 +211,28 @@ function addNumbers(a, b) {
 }   
 console.log(addNumbers(5, 10)); // 15
 
-//
+//Difference between var, let and const
+// var is used for function-scoped variables
+var x = 10;
+console.log(x); // 10
+
+// let is used for block-scoped variables
+let y = 20;
+console.log(y); // 20
+
+// const is used for block-scoped constants
+const z = 30;
+console.log(z); // 30
+
+//Multi-dimensional Arrays
+let multiArray = [
+    [1, 2, 3],      
+    [4, 5, 6],
+    [7, 8, 9]
+];
+console.log(multiArray[1][2]); // 6 (accessing element in a 2D array)
+
+
+
+
+

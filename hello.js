@@ -232,6 +232,62 @@ let multiArray = [
 ];
 console.log(multiArray[1][2]); // 6 (accessing element in a 2D array)
 
+//functions
+function multiply(a, b) {
+    return a * b; // Returns the product of a and b
+}   
+console.log(multiply(4, 5)); // 20
+
+//complex funcions with conditionals if-else, && || operators
+function checkNumber(num) {
+    if (num > 0 && num % 2 === 0) {
+        return "The number is positive and even.";
+    } else if (num > 0 && num % 2 !== 0) {
+        return "The number is positive and odd.";
+    } else if (num < 0) {
+        return "The number is negative.";
+    } else {
+        return "The number is zero.";
+    }
+}
+console.log(checkNumber(8)); // "The number is positive and even."
+console.log(checkNumber(7)); // "The number is positive and odd."
+console.log(checkNumber(-3)); // "The number is negative."
+console.log(checkNumber(0)); // "The number is zero."
+
+//Switch statement
+function getDayName(dayNumber) {
+    let dayName;
+    switch (dayNumber) {
+        case 1:
+            dayName = "Adwoa";
+            break;
+        case 2:
+            dayName = "Abenaa";
+            break;
+        case 3:
+            dayName = "Akua";
+            break;
+        case 4:
+            dayName = "Yaa";
+            break;
+        case 5:
+            dayName = "Afia";
+            break;
+        case 6:
+            dayName = "Ama";
+            break;
+        case 7:
+            dayName = "Akosua";
+            break;
+        default:
+            dayName = "Invalid day number";
+    }
+    return dayName;
+}
+console.log(getDayName(3)); // "Akua"
+
+
 
 
 

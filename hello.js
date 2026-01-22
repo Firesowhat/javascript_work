@@ -287,8 +287,287 @@ function getDayName(dayNumber) {
 }
 console.log(getDayName(3)); // "Akua"
 
+//Nested Objects
+let game = {
+    player: {
+        name: "Hero",
+        health: 100,
+        inventory: {
+            gold: 50,
+            potions: 3
+        }
+    },
+    enemy: {
+        type: "Goblin",
+        health: 80
+    }
+};
+console.log(game.player.inventory.gold); // 50 (accessing nested object property)
 
+//Accessing arrays in key value pairs
+let library = {
+    books: [
+        { title: "1984", author: "George Orwell" },
+        { title: "To Kill a Mockingbird", author: "Harper Lee" }
+    ]
+};
+console.log(library.books[1].title); // "To Kill a Mockingbird" (accessing array of objects in an object)   
+   
+      //while loops
+      let j = 0;
+      while (j < 5) {
+          console.log("While loop iteration: " + j);
+          j++;
+      }
 
+      //for loops
+        for (let k = 0; k < 5; k++) {
+            console.log("For loop iteration: " + k);
+        }
 
+        //Iterating through an array using for loop
+        let colors = ["red", "green", "blue"];
+        for (let m = 0; m < colors.length; m++) {
+            console.log("Color: " + colors[m]);
+        }
+        
+        //Nested for loops
+        for (let p = 1; p <= 3; p++) {
+            for (let q = 1; q <= 2; q++) {
+                console.log("Outer loop: " + p + ", Inner loop: " + q);
+            }
+        }
+    
+        //Do.while loop
+        let n = 0;
+        do {
+            console.log("Do-while loop iteration: " + n);
+            n++;
+        } while (n < 3);
+        
+        //Random Numbers
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min; // Returns a random integer between min (inclusive) and max (exclusive)
+        }
+        console.log(getRandomInt(1, 10)); // Random integer between 1 and 9
 
+        function getRandomFloat(min, max) {
+            return Math.random() * (max - min) + min; // Returns a random float between min (inclusive) and max (exclusive)
+        }
+        console.log(getRandomFloat(1.5, 5.5)); // Random float between 1.5 and 5.5
+
+        //Random Whole numbers with a range
+        function getRandomWholeNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min; // Returns a random whole number between min and max (both inclusive)
+        }
+        console.log(getRandomWholeNumber(1, 10)); // Random whole number between 1 and 10
+        
+        //parseInt with or without radix
+        let intString = "42";
+        console.log(parseInt(intString)); // 42
+        console.log(parseInt(intString, 10)); // 42 (with radix 10)
+        
+        //Ternary Operator
+        function checkAge(age) {
+            return age >= 18 ? "Adult" : "Minor"; // Returns "Adult" if age is 18 or older, otherwise "Minor"
+        }
+        console.log(checkAge(20)); // "Adult"
+        console.log(checkAge(16)); // "Minor"
+
+        //Multiple ternary operators
+        function getGrade(score) {
+            return score >= 90 ? "A" :
+                     score >= 80 ? "B" :
+                        score >= 70 ? "C" :
+                            score >= 60 ? "D" : "F"; // Returns grade based on score
+        }
+        console.log(getGrade(85));
+        console.log(getGrade(72));
+        
+        //Use strict
+        function isEqual(a, b) {
+            "use strict";
+            return a === b; // Returns true if a and b are strictly equal
+        }
+        console.log(isEqual(5, '5')); // false
+        console.log(isEqual(5, 5)); // true
+
+        //Mutate an array declared with const
+        const myConstArray = [1, 2, 3];
+        myConstArray.push(4);
+        console.log(myConstArray); // [1, 2, 3, 4]
+
+        //Prevent object mutation with object.freeze
+        const myObject = {
+  location: "room",
+  hasKey: false,
+  score: 0
+};
+Object.freeze(myObject);
+myObject.location = "hall"; // This will not change the location property
+console.log(myObject.location); // "room" (remains unchanged)
+const player = {
+    name: "Alice",
+    level: 1,
+    health: 100,
+    inventory: {
+        gold: 50,
+        items: ["sword", "shield"]
+    },
+    stats: {
+        strength: 10,
+        dexterity: 8
+    }
+};
+console.log(player.inventory.items[0]); // "sword" (accessing nested array in an object)
+console.log(player.stats.strength); // 10 (accessing nested object property)
+
+//Anonymous functions with arrow function
+const square = (x) => x * x; // Arrow function to calculate square
+console.log(square(5)); // 25
+
+//Arrow functions with arguments
+const add = (a, b) => a + b; // Arrow function to add two numbers
+console.log(add(3, 7)); // 10
+
+//Higher order arrow functions
+const numbersArray = [1, 2, 3, 4, 5];
+const doubledNumbers = numbersArray.map(num => num * 2); // Using map to double each number
+console.log(doubledNumbers); // [2, 4, 6, 8, 10]
+
+//Rest operator
+function sumAll(...args) {
+    return args.reduce((acc, curr) => acc + curr, 0); // Sums all arguments using reduce
+}
+console.log(sumAll(1, 2, 3, 4)); // 10
+
+//Spread operstaor
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const combinedArr = [...arr1, ...arr2];
+console.log(combinedArr); // [1, 2, 3, 4, 5, 6]
+
+//Destructuring assignment
+const user = {
+    username: "john_doe",
+    email: "john@example.com",
+    age: 30
+};
+
+//destructuring assignment to assign variables from array
+const { username, email } = user;
+console.log(username); // "john_doe"
+console.log(email); // "john@example.com"
+
+//create strings using template literals
+const firstName = "Jane";
+const lastName = "Doe";
+const greeting = `Hello, ${firstName} ${lastName}! Welcome to the site.`;
+console.log(greeting); // "Hello, Jane Doe! Welcome to the site."
+
+//a function with an object
+function createUser({ name, age, email }) {
+    return {
+        name: name,
+        age: age,
+        email: email
+    };
+}
+const newUser = createUser({ name: "Alice", age: 28, email: "alice@example.com" });
+console.log(newUser); // { name: "Alice", age: 28, email: "alice@example.com" }
+
+//getters and setters
+const rectangle = {
+    width: 10,
+    height: 5,
+    get area() {
+        return this.width * this.height;
+    },
+    set width(value) {
+        if (value > 0) {
+            this._width = value;
+        }
+    }
+};
+console.log(rectangle.area); // 50
+rectangle.width = 15;
+console.log(rectangle.area); // 75
+
+//Difference between import and require
+// Using import (ES6 modules)
+// import { myFunction } from './myModule.js';
+// Using require (CommonJS modules)
+// const myFunction = require('./myModule.js');
+
+//Import and Export
+// In myModule.js
+// export function myFunction() {
+//     console.log("Hello from myFunction!");
+// }
+// In main.js
+// import { myFunction } from './myModule.js';
+// myFunction(); // "Hello from myFunction!"
+
+//Difference between while loop and do while loop
+// While loop checks the condition before executing the loop body
+// Do-while loop executes the loop body at least once before checking the condition
+
+//When to use parseInt vs Number
+// Use parseInt when you want to convert a string to an integer and ignore any non-numeric characters after the number
+console.log(parseInt("42px")); // 42
+// Use Number when you want to convert a value to a number, including decimals
+console.log(Number("42.5")); // 42.5
+
+//When to use Ternary operator vs if-else
+// Use Ternary operator for simple conditional assignments
+// Use if-else for more complex conditions and multiple statements
+
+//When to use strict mode
+// Use strict mode to catch common coding errors and enforce better coding practices
+
+//When to use mutated array declared with const
+// Use mutated arrays declared with const when you want to ensure the reference to the array remains constant, but you still want to modify its contents
+
+//When to use object.freeze
+// Use Object.freeze when you want to prevent any modifications to an object, making it immutable
+
+//When to use anonymous functions with arrow functions
+// Use arrow functions for concise syntax and when you want to preserve the lexical scope of 'this'
+
+//when to use arrow functions with arguments
+// Use arrow functions with arguments when you want to create concise functions that take parameters
+
+//When to use higher order arrow functions
+// Use higher order arrow functions when you want to create functions that operate on other functions, such as map, filter, and reduce
+
+//When to use rest operator
+// Use the rest operator when you want to accept a variable number of arguments in a function
+
+//When to use spread operator
+// Use the spread operator when you want to expand an array or object into individual elements or properties
+
+//When to use destructuring assignment
+// Use destructuring assignment when you want to extract values from arrays or properties from objects into distinct variables
+
+//When to use destructuring assignment to assign variables from an array
+// Use destructuring assignment from an array when you want to assign multiple values from an array to individual variables in a concise way
+
+//Destructuring operator with assigned operators
+// Use destructuring assignment with assigned operators when you want to assign values from an array or object to variables and simultaneously perform operations on those values
+
+//when to create strings using template literals
+// Use template literals when you want to create strings that include variables or expressions in a readable and concise way
+
+//When to use a function with an object
+// Use a function with an object when you want to pass multiple related parameters as a single object for better organization and readability
+
+//When to use getters and setters
+// Use getters and setters when you want to control access to an object's properties, allowing for validation or computed properties
+
+//When to use import vs require
+// Use import for ES6 modules in modern JavaScript environments
+// Use require for CommonJS modules in Node.js or older JavaScript environments
+
+//when to use import and export
+// Use import and export when you want to modularize your code, allowing for better organization and reuse of functions, objects, or variables across different files
 
